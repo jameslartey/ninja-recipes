@@ -20,8 +20,10 @@ interface Recipe {
 
 }
 
+const host = process.env.NODE_ENV === 'production' ? 'https://ninja-recipes.vercel.app' : 'http://localhost'
+
 async function getRecipies(): Promise<Recipe[]> {
-  const result = await fetch('http://localhost:3000/recipes')
+  const result = await fetch(`${host}/recipes`)
 
   await new Promise((resolve) => setTimeout(resolve, 450))
 
