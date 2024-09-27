@@ -28,6 +28,8 @@ async function getRecipies(): Promise<Recipe[]> {
   return result.json()
 }
 
+export const dynamic = 'force-dynamic'
+
 export default async function Home() {
   const recipes = await getRecipies()
 
